@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proxy Monitor PRO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div style="display:flex;align-items:center;justify-content:space-between">
+  <h2>⚡ Proxy Monitor Dev Tool</h2>
+
+  <div>
+    <input id="search" placeholder="Search logs..." />
+    <button id="themeToggle">🌙</button>
+  </div>
+</div>
+
+<h3 id="env"></h3>
+
+<div style="margin-bottom:10px">
+  <button onclick="setEnv('dev')">DEV</button>
+  <button onclick="setEnv('qc')">QC</button>
+  <button onclick="clearLogs()">Clear Logs</button>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Env</th>
+<th>Service</th>
+<th>Method</th>
+<th>URL</th>
+<th>View</th>
+<th>Copy</th>
+</tr>
+</thead>
+<tbody id="logs"></tbody>
+</table>
+
+<!-- JSON MODAL -->
+<div id="jsonModal" class="modal">
+  <div class="modal-content">
+    <div class="model-header">
+      <button onclick="copyModal()">📋 Copy JSON</button>
+      <span class="close" onclick="closeModal()">❌</span>
+    </div>
+
+    <pre id="jsonViewer"></pre>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

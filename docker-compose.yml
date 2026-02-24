@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  proxy-monitor:
+    build: .
+    container_name: proxy-monitor
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
